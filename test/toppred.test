@@ -1,0 +1,15 @@
+#! /bin/sh
+
+### Set verbose mode
+test "x$VERBOSE" = "xx" && set -x
+
+## Environnement
+TOPPREDDATA=$srcdir/../data; export TOPPREDDATA
+
+## Simple sequence test
+../src/toppred -g none -t none $srcdir/seq-test >/dev/null || exit 1
+
+## Check with more than one input file
+../src/toppred -g none -t none $srcdir/seq-test $srcdir/seq-test >/dev/null || exit 1
+
+exit 0

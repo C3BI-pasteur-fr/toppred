@@ -1,0 +1,17 @@
+#! /bin/sh
+
+### Set verbose mode
+test "x$VERBOSE" = "xx" && set -x
+
+### Set environnement
+TOPPREDDATA=$srcdir/../data; export TOPPREDDATA
+TOPPREDOPT='-g none -t none'
+
+### sequence length equal to window size
+base='min_seqlen'
+../src/toppred $TOPPREDOPT $srcdir/${base}.fasta >${base}_tmp.out 2>${base}_tmp.err || exit 1
+
+diff ${base}_tmp.out $srcdir/min_seqlen.out >/dev/null || exit 1
+diff ${base}_tmp.err $srcdir/min_seqlen.err >/dev/null || exit 1
+
+exit 0

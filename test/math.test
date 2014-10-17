@@ -1,0 +1,15 @@
+#! /bin/sh
+
+### Set verbose mode
+test "x$VERBOSE" = "xx" && set -x
+
+## check gnuplot availability
+(gnuplot --version) >/dev/null 2>&1 || exit 77
+
+### Set environnement
+TOPPREDDATA=$srcdir/../data; export TOPPREDDATA
+
+## Call program
+../src/toppred -g png $srcdir/seq_zero_div.fasta >/dev/null 2>&1
+
+exit 0

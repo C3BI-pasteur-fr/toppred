@@ -1,0 +1,36 @@
+Algorithm specific parameters: 
+
+Full window size : 21
+Core window size : 11
+Wedge window size: 5
+Using hydrophobicity file: GES-scale
+
+Cutoff for certain transmembrane segments: 1.00
+Cutoff for putative transmembrane segments: 0.60
+Critical distance between 2 transmembrane segments: 2
+
+Critical loop length:  60
+
+Kingdom: procaryote
+
+Using cyt/ext file: CYTEXT-scale
+
+
+Sequence : last  (31 res)
+RRRRRRRRRRVAKLFADAGLVCITSFISPYT
+
+Found: 1 segments
+
+Candidate membrane-spanning segments:
+
+ Helix Begin - End   Score Certainity
+     1    11 - 31    0.960 Putative
+
+Total of 2 structures are to be tested
+
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   1                  0.90        11.00     0.00     11.00    -1.00
+TOPOLOGY                                   N-in        ?      N-in
+CYT_LOOP      1     10     10             11.00  ( -1.01)
+TRANSMEM     11     31     21 0.90 0.96
+//

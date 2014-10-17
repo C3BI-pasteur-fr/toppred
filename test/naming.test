@@ -1,0 +1,23 @@
+#! /bin/sh
+
+### Set verbose mode
+test "x$VERBOSE" = "xx" && set -x
+
+### Set environnement
+TOPPREDDATA=$srcdir/../data; export TOPPREDDATA
+TOPPREDOPT='-g none -t none'
+
+### is anonymous detection correct
+base='seq_anonymous'
+../src/toppred $TOPPREDOPT $srcdir/${base}.fasta >${base}_tmp.out 2>${base}_tmp.err || exit 1
+
+diff ${base}_tmp.err $srcdir/${base}.err >/dev/null || exit 1
+
+# what with named sequence
+base='seq-test'
+../src/toppred $TOPPREDOPT $srcdir/${base} >${base}_tmp.out 2>${base}_tmp.err || exit 1
+
+grep Q60967 ${base}_tmp.out >/dev/null 2>/dev/null || exit 1
+diff ${base}_tmp.err $srcdir/no_error.err >/dev/null || exit 1
+
+exit 0

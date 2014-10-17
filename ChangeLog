@@ -1,0 +1,287 @@
+2008-10-22  Eric  Deveaud  <edeveaud@raclette-tete1.calcul.pasteur.fr>
+
+	* configure.in: Changed version to 1.10
+
+2008-05-06  Nicolas Joly  <njoly@pasteur.fr>
+
+	* doc/toppred.pod: Add missing option `-t none' in example
+	command.
+
+	* src/*.[ch]: Remove XML output, which was unused and broken too
+	often without notice ...
+	* doc/toppred.pod: Adjust.
+
+2008-04-18  Nicolas Joly  <njoly@pasteur.fr>
+
+	* test/*.test: Enforce correct status value on success.
+
+2008-03-06  Eric  Deveaud  <edeveaud@pasteur.fr>
+
+	* src/seq-reader.c: Allow starting blank lines on fasta formated
+	files.
+
+2008-02-19  Nicolas Joly  <njoly@pasteur.fr>
+
+	* src/main.c: Remove unneeded newlines from fatal error messages.
+
+2008-02-01  Eric  Deveaud  <edeveaud@pasteur.fr>
+
+	* src/seq-reader.c: Allow `*' (stop codon representation) while
+	sequence reading.
+
+2006-06-06  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/seq-reader.c: Fix anonymous detection and sequence name
+	parsing with pipes.
+
+2006-05-31  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* doc/toppred.pod: Man page update and correction.
+
+2006-05-31  Nicolas Joly  <njoly@pasteur.fr>
+
+	* test/hydro.test: New file that checks all hydrophobicity scales.
+
+2006-05-30  Nicolas Joly  <njoly@pasteur.fr>
+
+	* src/seq-reader.c: Do not push characters back on stream if
+	nothing was read previously.
+
+	* src/main.c: Do not close output file in sequence file processing
+	loop.
+
+2006-05-30  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/*.c, src/*.h: time stamp cleanup.
+
+	* src/main.c: Optional options `-g' and `-t' no more silently
+	ignored if needed support is missing.
+
+	* src/usage.c: gnuplot png color definition fix.
+
+	* src/seq-reader.c: Fix anonymous detection and related memory
+	overflow.
+
+	* src/profile.c: Fix file descriptor leak induced by mkstemp.
+
+2006-05-29  Nicolas Joly  <njoly@pasteur.fr>
+
+	* doc/toppred.pod: Small spelling/formatting fixes.
+
+	* src/mloutput.c: Remove trailing space in XML output.
+	* src/main.c: Fix incorrect XML generation, by moving `toppreds'
+	end tag, out of file process loop.
+
+	* src/mloutput.c: Make HTML header looks a little better (no
+	functional change).
+
+	* src/output.[ch]: Remove local `dirname()' function, and prefer
+	the one from the system.
+	* src/main.c: Adjust accordingly.
+
+	* src/graph.c, src/mloutput.c, src/profile.c: Do not assume
+	`dirname()' return value has a trailing `/' character.
+
+2006-05-25  Nicolas Joly  <njoly@pasteur.fr>
+
+	* src/main.c: Move cleanup outside of the processing loop to avoid
+	use of freed memory (data files and output dir) with multiple
+	input files.
+	* test/toppred.test: Exercize more than one input file.
+
+2004-05-17  Nicolas Joly  <njoly@pasteur.fr>
+
+ 	* src/profile.c: hide gplot() function if gnuplot is missing.
+	* src/topology.c, src/loop.c: Use const where appropriate.
+
+2004-05-17  Katja Schuerer  <schuerer@pasteur.fr>
+
+	* src/topology.c: Fix off by one index error in topologies
+	construction.
+
+2004-05-14  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/main.c: memory leak while freeing KS structures corrected in
+	case of too many topologies.
+	* src/main.c: memory liberation in case of no libgd.
+	NB: free(NULL) is allowed by the C iso guidelines.
+	* src/main.c: added internal -y flag in order to disable .hydro
+	file generation. (not documented).
+	* src/seq-reader.c: a bunch of header processing bugs correction.
+
+2004-05-03  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/graph.c: topologies graphic production code completly
+	rewrote.
+	* src/topology.c: removing the warning when no segment found.
+	* test/last_seg.err: modified to be coherent with no segment found
+	warning modification.
+	* test/more_calc.err: modified to be coherent with no segment
+	found warning modification.
+	* test/only_put.err: modified to be coherent with no segment found
+	warning modification.
+	* test/seq_float.err: modified to be coherent with no segment
+	found warning modification.
+
+2004-04-29  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/graph.c: correction of the graph representation. no longer
+	crash.
+
+2003-12-12  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/topology.c: modified warning message when no segment found
+	to be more accurate.
+
+2003-12-12  Nicolas Joly  <njoly@pasteur.fr>
+
+	* test/*.test: New verbose mode (VERBOSE=x).
+
+2003-12-10  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/profile.c: changed aa2H from function to macro,
+	optimisation.
+	* src/seq-reader.c: modified sequence reading function.
+
+2003-12-09  Nicolas Joly  <njoly@pasteur.fr>
+
+	* src/topoprint.c: Do not call `strlen()' on the same object 5
+	times.
+
+2001-11-21  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* configure.in: toppred is now in version 1.00.
+	* src/seq-reader.c: non ascii characters on sequences not more
+	allowed.
+	* src/*.c: corrected the -o result_file option behaviour. All
+	files are stored to the same directory than result_file.
+
+2001-10-15  Katja Schuerer  <schuerer@pasteur.fr>
+
+	* test/detect_segments.test: test if all segments are detected.
+	* test/seqlen.test: test of sequences of critical lengths.
+	* test/construct_topos.test: test to verify the calculation of all
+	toplogies.
+	* src/topology.c: correct topology calculation -- skip topologies
+	without any segment.
+
+2001-10-05  Katja Schuerer  <schuerer@pasteur.fr>
+
+	* data/toppred.dtd: add DTD file for xml output.
+	* src/mloutput.c: add function for xml output and transfer html
+	output functions to this file.
+	* src/output.c: transfer general output functions to this file.
+
+2001-09-12  Katja Schuerer  <schuerer@pasteur.fr>
+
+	* src/loop.c: modify get_segment to allow a segment at beginning
+	of the sequence.
+	* src/loop.c: correct bug while translation of old segment
+	sructure to new segment structure (detection of segment at
+	beginning of the sequence).
+	* src/charge.c: correct floating point exceptions caused by zero
+	division in distance function.
+
+2001-09-10  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/seq-reader.c: corrected bug while reading long comments. id
+	and comment are now dynamically handled, anonymous sequence are
+	tagged as anonymous, and empty sequence causes program exit.
+
+2001-08-30  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/seq-reader.c: modified sequence aquisition, sequence is not
+	systematicaly converted to upcase.
+
+	* src/main.c: added web output format via -w option.
+
+2001-08-28  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/loop.c: corrected a Hplot reading values, that causes a
+	segmentation fault on some systems.
+
+2001-08-03  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/seq-reader.c: seq reader upcase the sequence, as donwcase
+	sequences are not useable.
+
+2001-07-26  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* doc/toppred.pod: manpage looks like a manpage now.
+
+2001-07-24  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/seq-reader.c: corrected a seq-reader bug.
+
+	* src/*.[ch] corrected the include localisation.
+
+2001-07-23  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/graph.c: corrected a bug in graph representation.
+
+2001-07-19  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/graph.c: added graphic topos output choice (-d option).
+
+2001-07-18  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* configure.in: the graphic topology representation is now
+	depending on the use/presence of the libgd.
+
+2001-07-18  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/graph.c: adapted graphic topos output to KS structs.
+
+2001-07-05  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/loop.c (calc_loop): added the penultimate aa checking.
+
+2001-06-27  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/loop.h: introduced loop_t and seg_t structures.
+
+	* src/loop.c : modified the loop / segments structure to fit for
+	the Katja topology calcul.
+
+2001-06-21  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/loop.c: modified calc_segments to take in account segments
+	in position 0 and segments inside a "plateau".
+
+2001-06-19  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/seq_reader.c: sequence reader corrected, now handle
+	correctly incorect format sequence files.
+
+2001-06-13  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/profile.c: added region drawing in produced plot.
+
+2001-06-12  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/profile.c: changed /tmp/gnuplot-file-definition, is now
+	unique. Added some cosmetics in seq.hydro file.
+
+2001-05-14  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* doc/toppred.pod: added documentation.
+
+2001-05-11  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/main.c: modified a bunch of tests.
+
+2001-05-10  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/main.c: added hydrophobic gnu-plotting routine supported
+	format are ps, ppm, and x11.
+
+2001-05-03  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/loop.c: some code cleanning.
+	* src/main.c: some code cleanning.
+
+2001-04-20  Eric Deveaud  <edeveaud@pasteur.fr>
+
+	* src/main.c (main): beginning of work. Added hydrophobic values
+	load from file added sequence load from file
+

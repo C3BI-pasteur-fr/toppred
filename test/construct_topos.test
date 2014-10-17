@@ -1,0 +1,31 @@
+#! /bin/sh
+
+### Set verbose mode
+test "x$VERBOSE" = "xx" && set -x
+
+### Set environnement
+TOPPREDDATA=$srcdir/../data; export TOPPREDDATA
+TOPPREDOPT='-g none -t none'
+
+### calculation of all topologies is impossible
+base='too_many_put'
+../src/toppred $TOPPREDOPT $srcdir/${base}.fasta >${base}_tmp.out 2>${base}_tmp.err || exit 1
+
+diff ${base}_tmp.out $srcdir/${base}.out >/dev/null || exit 1
+diff ${base}_tmp.err $srcdir/${base}.err >/dev/null || exit 1
+
+### more topologies than printed
+base='more_calc'
+../src/toppred $TOPPREDOPT $srcdir/${base}.fasta >${base}_tmp.out 2>${base}_tmp.err || exit 1
+
+diff ${base}_tmp.out $srcdir/${base}.out >/dev/null || exit 1
+diff ${base}_tmp.err $srcdir/${base}.err >/dev/null || exit 1
+
+### found only putative segments -> skip topo without segments
+base='only_put'
+../src/toppred $TOPPREDOPT $srcdir/${base}.fasta >${base}_tmp.out 2>${base}_tmp.err || exit 1
+
+diff ${base}_tmp.out $srcdir/${base}.out >/dev/null || exit 1
+diff ${base}_tmp.err $srcdir/${base}.err >/dev/null || exit 1
+
+exit 0

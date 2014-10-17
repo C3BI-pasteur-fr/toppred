@@ -1,0 +1,67 @@
+Algorithm specific parameters: 
+
+Full window size : 21
+Core window size : 11
+Wedge window size: 5
+Using hydrophobicity file: GES-scale
+
+Cutoff for certain transmembrane segments: 1.00
+Cutoff for putative transmembrane segments: 0.60
+Critical distance between 2 transmembrane segments: 2
+
+Critical loop length:  60
+
+Kingdom: procaryote
+
+Using cyt/ext file: CYTEXT-scale
+
+
+Sequence : first  (75 res)
+VAKLFADAGLVCITSFISPYTRRRRVAKLFADAGLVCITSFISPYTRRRRVAKLFAIIII
+IIIIIIISPYTRRRR
+
+Found: 3 segments
+
+Candidate membrane-spanning segments:
+
+ Helix Begin - End   Score Certainity
+     1     1 - 21    0.960 Putative
+     2    26 - 46    0.960 Putative
+     3    51 - 71    2.310 Certain
+
+Total of 4 structures are to be tested
+
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   1                  1.00         7.00     0.00      1.00    -0.69
+TOPOLOGY                                   N-in        ?      N-in
+CYT_LOOP      1     50     50             11.00  ( -0.15)
+TRANSMEM     51     71     21 1.00 2.31
+EXT_LOOP     72     75      4              4.00  ( -1.01)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   2                  0.90        -6.00     0.00     -3.00     0.00
+TOPOLOGY                                  N-out        ?     N-out
+TRANSMEM      1     21     21 0.90 0.96
+CYT_LOOP     22     50     29             10.00  ( -0.60)
+TRANSMEM     51     71     21 1.00 2.31
+EXT_LOOP     72     75      4              4.00  ( -1.01)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   3                  0.90         5.00     0.00      0.00    -0.71
+TOPOLOGY                                   N-in        ?         ?
+CYT_LOOP      1     25     25              6.00  ( -0.15)
+TRANSMEM     26     46     21 0.90 0.96
+EXT_LOOP     47     50      4              5.00  ( -1.01)
+TRANSMEM     51     71     21 1.00 2.31
+CYT_LOOP     72     75      4              4.00  ( -1.01)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   4                  0.90        -4.00     0.00     -3.00     0.00
+TOPOLOGY                                  N-out        ?     N-out
+TRANSMEM      1     21     21 0.90 0.96
+CYT_LOOP     22     25      4              5.00  ( -1.01)
+TRANSMEM     26     46     21 0.90 0.96
+EXT_LOOP     47     50      4              5.00  ( -1.01)
+TRANSMEM     51     71     21 1.00 2.31
+CYT_LOOP     72     75      4              4.00  ( -1.01)
+//

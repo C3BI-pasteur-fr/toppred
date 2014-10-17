@@ -1,0 +1,101 @@
+<!-- DTD for toppred output   -->
+<!ELEMENT  toppreds (parameters?, toppred+)>
+
+<!ELEMENT toppred  (parameters?, sequence?, annotation?, plot?, tmsummary, topologies?)>
+
+<!-- parameters of the toppred algorithm -->
+<!ELEMENT  parameters   (corewindow, wedgewindow, certain, putative, distsegments, looplength, eucaryotes, hydrophobycity)>
+
+<!ELEMENT corewindow (#PCDATA)>
+<!ATTLIST corewindow
+        default (true|false) "false">
+<!ELEMENT wedgewindow (#PCDATA)>
+<!ATTLIST wedgewindow
+        default (true|false) "false">
+<!ELEMENT certain (#PCDATA)>
+<!ATTLIST certain
+        default (true|false) "false">
+<!ELEMENT putative (#PCDATA)>
+<!ATTLIST putative
+        default (true|false) "false">  
+<!ELEMENT distsegments (#PCDATA)>
+<!ATTLIST distsegments
+        default (true|false) "false">
+<!ELEMENT looplength (#PCDATA)>
+<!ATTLIST distsegments
+        default (true|false) "false">
+<!ELEMENT kingdom (#PCDATA)>
+<!ATTLIST kingdom
+        default (true|false) "false">
+<!ELEMENT hydrophobycity (#PCDATA)>
+<!ATTLIST hydrophobycity
+        default (true|false) "false">
+
+<!-- programme results -->
+<!ELEMENT  results (sequence)+>
+
+
+<!ATTLIST sequence
+        id  ID    #IMPLIED
+        len CDATA #IMPLIED>
+
+<!ELEMENT annotation (#PCDATA)>
+
+<!ELEMENT plot EMPTY>
+<!ATTLIST plot
+        hydro CDATA  #REQUIRED
+        gplot CDATA  #IMPLIED>
+
+<!ELEMENT tmsummary (segment*)>
+<!ATTLIST tmsummary
+        segments  CDATA "0">
+        
+
+<!ELEMENT segment EMPTY>
+<!ATTLIST segment 
+        start CDATA  #REQUIRED 
+        stop  CDATA  #IMPLIED
+        hp    CDATA  #REQUIRED
+        type  (putative|certain) "certain">
+
+<!ELEMENT topologies (toppology+)>
+<!ATTLIST topologies
+        maxtopos  CDATA #IMPLIED
+        topoprint CDATA #IMPLIED>
+
+<!ELEMENT topology (loop?, (transmem, loop)+, transmem?)>
+<!ATTLIST topology 
+        nr       ID     #IMPLIED
+        prob     CDATA  #IMPLIED
+        darglys  CDATA  #REQUIRED
+        dcytext  CDATA  #IMPLIED
+        dncharge CDATA  #IMPLIED
+        dnnegpos CDATA  #IMPLIED
+        image    CDATA  #IMPLIED
+        orient   CDATA  #IMPLIED>
+
+<!ELEMENT transmem EMPTY>
+<!ATTLIST transmem
+        start CDATA  #REQUIRED
+        stop  CDATA  #IMPLIED
+        prob  CDATA  #IMPLIED
+        hp    CDATA  #REQUIRED>
+
+<!ELEMENT loop EMPTY>
+<!ATTLIST loop  
+        type (ext|cyt|unknown) "unknown"    
+        start   CDATA  #REQUIRED
+        stop    CDATA  #IMPLIED
+        darglys CDATA  #REQUIRED
+        dcytext CDATA  #IMPLIED
+        decisive (darglys|dcytext) "darglys">
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,257 @@
+=pod
+
+=head1 NAME
+
+=over 4
+
+=item B<toppred> - Transmembrane topology prediction.
+
+=back
+
+=head1 SYNOPSIS
+
+=over 4
+
+=item B<toppred> [options] E<lt>F<seq data>E<gt> ...
+
+=back
+
+=head1 OPTIONS
+
+Following command line options are allowed:
+
+=over 4
+
+=item -c F<value>
+
+Use F<value> as certain cut-off value. Default is 1.
+
+=item -d F<val>
+
+Use F<val> as critical distance between 2 transmembrane segments.
+If 2 calculated segments are separated by a distance smaller than
+F<val> amino-acids only the segment with best hydrophobicity value is
+taken in account. Default is 2.
+
+=item -e
+
+switch the cyt-ext calculus to Eucaryotes. Default is Procaryotes.
+
+=item -g F<format>
+
+Produce or display hydrophobic profile in specified F<format>.
+Currently the supported values for format are:
+
+=over 1
+
+=item B<x11>  : display the graph on screen (default).
+
+=item B<ps>   : produce a .ps file.
+
+=item B<png>  : produce a .png file.
+
+=item B<ppm>  : produce a .ppm file.
+
+=item B<none> : no profile is produced.
+
+=back
+
+B<Warning:> this option and the related values are B<only> available
+if toppred is compiled with the gnuplot support.
+
+=item -h
+
+Usage display.
+
+=item -H F<file>
+
+Load hydrophobicity scale from F<file>, default is GES-scale.
+Accepted values are either:
+
+=over 1
+
+=item B<KD-scale>  : (Kyte and Doolittle, J. Mol. Biol (1982) 157, 105-132 )
+
+=item B<GES-scale> : (Goldman Engelman Steitz Ann. Rev. Biophys. Biophys. Chem. 1986 15/ 321 53)
+
+=item B<GVH-scale> : (Gunnar von Heijne J. Mol. Biol. (1992) 225, 487-494)
+
+=item either your own hydrophobicity scale file. In this case the
+hydrophobicity scale file must be located in the working directory.
+
+=back
+
+In order to use your own hydrophobicity scale file, see the format of
+the supported scale files in the toppred data directory on your
+system; look in F</usr/share/toppred/>or F</usr/local/share/toppred/>,
+or ask your system administrator.
+
+=item -n F<value>
+
+Use F<value> as a core window length, default is 11.
+
+=item -o F<file>
+
+Place the output into F<file>, and store all other files to the same
+directory than F<file>.
+
+=item -O F<format>
+
+Print output in the specified F<format>. Supported values are: B<old>:
+old toppred output format, B<new>: new toppred output format (the
+default value), B<html>: produce an html page per sequence, note that
+if not specified hydrophobic profile and topologies representation are
+forced in png format.
+
+=item -p F<value>
+
+Use F<value> as putative cut-off, default is 0.6.
+
+=item -q F<value>
+
+Use F<value> as wedge window length, default is 5.
+
+=item -s F<value>
+
+Use F<value> as critical loop length. If a loop between 2
+transmembrane segments has a length greater than F<val> the Lys/Arg
+ratio is not taken in account to determine the topologies. Default is
+60.
+
+=item -t F<format>
+
+Produce images of the topologies in specified F<format>. Currently the
+supported values for format are: B<png>: produces images of the
+topologies in png format, B<none>: no graphic representation of the
+topologies is produced. Default is png.
+
+B<Warning:> this option and the related values are B<only> available
+if toppred is compiled with the libgdb support.
+
+=item -v
+
+Display the version number.
+
+=back
+
+=head1 FORMAT
+
+B<toppred> only handles fasta sequence format as input.
+
+B<toppred> handles 2 output format via the B<-O> flag.
+
+
+=head1 DESCRIPTION
+
+B<toppred> is a program to determine the topology of a transmembrane
+protein based on G. von Heijne algorithm.
+
+"Membrane protein structure prediction. Hydrophobicity analysis
+and the positive-inside rule."
+J. Mol. Biol. 1992 225,487-494.
+
+Each sequence from F<seq data> in fasta format is processed, and
+B<toppred> generate the Hydrophobycity profile of the sequence, and
+the corresponding hydrophobycities values in the file
+E<lt>B<sequence-ID>E<gt>B<.hydro>.
+
+Furthermore, the predicted topologies are represented as png images.
+Each topology is stored in file
+E<lt>B<sequence-ID>E<gt>B<->E<lt>B<number>E<gt>B<.png>
+
+The hydrophobicity profile is computed using a window formed by a core
+rectangular window of size n, flanked by 2 triangular windows of size
+q. NB rectangular and triangular mean that the ponderation values
+inside those windows are respectively constant and variable.
+
+The hydrophobicity profile is computed using the following window
+
+        ->     n     <-
+	  ___________
+         /|         |\
+        / |         | \
+       /__|_________|__\
+     -> q  <-     -> q  <-
+     ->   l = n + 2q    <-
+
+Thus one can use a rectangular window by setting q to 0.
+
+B<toppred> produces the following output files, depending on the
+command line options
+
+=over 4
+
+=item B<foo.hydro>
+
+File containing the hydrophobic values for the sequence B<foo>.
+
+=item B<foo.ps>, B<foo.ppm>, B<foo.png>
+
+Image representing the hydrophobic profile for the sequence B<foo> in
+postcript, ppm or png format depending on the -g option value
+specified on command line, respectively -g ps, -g ppm or -g png.
+
+=item B<foo-1.png> ... B<foo-n.png>
+
+Image representing the graphic representation of the predicted
+topology B<1>... B<n> for the sequence B<foo> in png format if the -t
+png option is given on the command line.
+
+=back
+
+=head1 ENVIRONMENT
+
+B<TOPPREDDATA> could be used to specify an alternate toppred data
+folder
+
+=head1 EXAMPLES
+
+Consider the fasta formated sequence B<foo> in file B<bar>.
+
+=over 4
+
+=item B<toppred> F<bar>
+
+Process all sequences in fasta format from F<bar>, display for each
+sequence the hydrophobicity profile, produce the corresponding
+B<foo.hydro> and the corresponding B<foo>B<->E<lt>B<#>E<gt>B<.png>
+graphical topologies representation as png images.
+
+=item B<toppred> -g ps F<bar>
+
+Same as previous, except that instead of displaying the hydrophobicity
+profile on screen, this one is produced in a postcript format image
+B<foo.ps>
+
+=item B<toppred> -g none F<bar>
+
+Same a previous, except that the hydrophobicity profile is not
+displayed neither produced.
+
+=item B<toppred> -g none -t none F<bar>
+
+Same a previous, except that neither the hydrophobicity profile
+neither the graphical topologies representation are not produced
+
+=item B<toppred> -H KD-scale F<bar>
+
+Use KD scale instead of default GES scale, while processing sequences.
+
+=item B<toppred> -O html -g png -t none -o result F<bar>
+
+Write html outpout in file F<result>, furthermore the hydrophobicity
+profile is produced in PNG format and graphics topologies are not
+produced.
+
+=item cat F<bar> | B<toppred> -
+
+B<toppred> is able to read data from stdin.
+
+=back
+
+=head1 AUTHORS
+
+Eric Deveaud E<lt>edeveaud@pasteur.frE<gt>, Institut Pasteur and
+Katja Schuerer.
+
+=cut

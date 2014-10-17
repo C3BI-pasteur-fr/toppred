@@ -1,0 +1,28 @@
+
+TOPPRED - Transmembrane topology prediction.
+
+This program is a new implementation of the original toppred program,
+based on G. von Heijne algorithm :
+
+"Membrane protein structure prediction. Hydrophobicity analysis and
+the positive-inside rule." J Mol Biol 1992 May 20;225(2):487-94.
+
+"TopPred II: an improved software for membrane protein structure
+predictions." CABIOS 10(6):685-6, 1994 Dec.
+
+This implementation can use 2 optionals programs in order to 
+display graphical results:
+
+	- gnuplot version 3.7 patchlevel 1 or more
+            `gnuplot' can be used in order to display the
+	    hydrophobicity profile of a given sequence.
+	    see <http://www.gnuplot.info/>
+	- libgd with png support
+	    `gd' library can be used in order to produce a
+	    graphical representation of the calculated topologies.
+	    see <http://www.boutell.com/gd>
+
+For installation, please see INSTALL note.
+
+Please report bugs, comments or suggestions to:
+Eric Deveaud:    edeveaud@pasteur.fr

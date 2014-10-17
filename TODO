@@ -1,0 +1,7 @@
+
+Assorted ToDo items :
+
+* Add tests to exercise `-g' and `-t' formats.
+* Cleanup Text/HTML output functions.
+* Unhandled conflict between `-O html' and `-o outfile'.
+

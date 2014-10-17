@@ -1,0 +1,23 @@
+Algorithm specific parameters: 
+
+Full window size : 21
+Core window size : 11
+Wedge window size: 5
+Using hydrophobicity file: GES-scale
+
+Cutoff for certain transmembrane segments: 1.00
+Cutoff for putative transmembrane segments: 0.60
+Critical distance between 2 transmembrane segments: 2
+
+Critical loop length:  60
+
+Kingdom: procaryote
+
+Using cyt/ext file: CYTEXT-scale
+
+
+Sequence : no  (42 res)
+RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+
+Found: 0 segments
+

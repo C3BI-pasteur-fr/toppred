@@ -1,0 +1,31 @@
+#! /bin/sh
+
+### Set verbose mode
+test "x$VERBOSE" = "xx" && set -x
+
+### Set environnement
+TOPPREDDATA=$srcdir/../data; export TOPPREDDATA
+TOPPREDOPT=' -g none -t none'
+
+### detect segment at the beginning of the sequence
+base='first_seg'
+../src/toppred $TOPPREDOPT $srcdir/${base}.fasta >${base}_tmp.out 2>${base}_tmp.err || exit 1
+
+diff ${base}_tmp.out $srcdir/${base}.out >/dev/null || exit 1
+diff ${base}_tmp.err $srcdir/${base}.err >/dev/null || exit 1
+
+### detect segment at the end of the sequence
+base='last_seg'
+../src/toppred $TOPPREDOPT $srcdir/${base}.fasta >${base}_tmp.out 2>${base}_tmp.err || exit 1
+
+diff ${base}_tmp.out $srcdir/${base}.out >/dev/null || exit 1
+diff ${base}_tmp.err $srcdir/${base}.err >/dev/null || exit 1
+
+### no segment found
+base='no_seg'
+../src/toppred $TOPPREDOPT $srcdir/${base}.fasta >${base}_tmp.out 2>${base}_tmp.err || exit 1
+
+diff ${base}_tmp.out $srcdir/${base}.out >/dev/null || exit 1
+diff ${base}_tmp.err $srcdir/${base}.err >/dev/null || exit 1
+
+exit 0

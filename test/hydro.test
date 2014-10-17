@@ -1,0 +1,18 @@
+#! /bin/sh
+
+### Set verbose mode
+test "x$VERBOSE" = "xx" && set -x
+
+## Environnement
+TOPPREDDATA=$srcdir/../data; export TOPPREDDATA
+
+## Check hydrophobicity files
+hyd='GES-scale GVH-scale KD-scale'
+for h in $hyd; do
+  ../src/toppred -g none -t none -H $h -o toppred.out $srcdir/seq-test >/dev/null || exit 1
+  grep "^Using hydrophobicity file: $h" toppred.out >/dev/null || exit 1
+done
+
+rm -f toppred.out
+
+exit 0

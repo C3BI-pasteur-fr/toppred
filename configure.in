@@ -1,0 +1,48 @@
+# Process this file with autoconf to produce a configure script.
+AC_INIT([toppred], [1.10])
+AM_INIT_AUTOMAKE
+AM_CONFIG_HEADER([src/config.h])
+
+# Checks for programs.
+AC_PROG_CC
+AC_CHECK_PROG(POD2MAN, pod2man, pod2man, :)
+AC_CHECK_PROG(GNUPLOT, gnuplot, gnuplot)
+if test "$GNUPLOT" = "gnuplot"; then
+ AC_DEFINE(HAVE_GNUPLOT, 1, is gnuplot present)
+else
+ AC_MSG_WARN([gnuplot not found, Hydrophobic profile will be unavailable])
+fi
+
+# Checks for libraries.
+AC_CHECK_LIB(m, pow)
+
+# Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS([errno.h stdlib.h string.h unistd.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_TYPE_SIZE_T
+AC_STRUCT_TM
+
+# Checks for library functions.
+# AC_FUNC_MALLOC # tru64 problem
+AC_FUNC_STAT
+AC_CHECK_FUNCS([pow sqrt strchr strerror strrchr])
+
+# Checks for png driver
+GD_CHECK
+
+# Host specific stuff
+OS_CPPFLAGS=""
+AC_CANONICAL_HOST
+case $host in
+  *-*osf*)
+    OS_CPPFLAGS="-D_XOPEN_SOURCE_EXTENDED"
+    break
+esac
+AC_SUBST([OS_CPPFLAGS])
+
+AC_CONFIG_FILES([Makefile m4/Makefile src/Makefile data/Makefile doc/Makefile
+                 test/Makefile])
+AC_OUTPUT

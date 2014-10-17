@@ -1,0 +1,256 @@
+Algorithm specific parameters: 
+
+Full window size : 21
+Core window size : 11
+Wedge window size: 5
+Using hydrophobicity file: GES-scale
+
+Cutoff for certain transmembrane segments: 1.00
+Cutoff for putative transmembrane segments: 0.60
+Critical distance between 2 transmembrane segments: 2
+
+Critical loop length:  60
+
+Kingdom: procaryote
+
+Using cyt/ext file: CYTEXT-scale
+
+
+Sequence : more  (280 res)
+RRRRRRRVAKLFADAAAAAAASFISPYTRRRRRRRRRRRVAKLFADAGLVCITSFISPYT
+RRRRRRTTTTTTTTTRRRRRRRRRRVAKLFADSSYGLVCITSFISPYTRRRRRRVAKLFS
+DSGLVCITSFISPYTRRRRRRRVKKKKKKKKKRVRRRRRRRVAKLFADGLSSVCITSFIS
+PYTRRRRRRRVRVRRRRRKKVAKLFADSGLVCIYTSFISPYRRRRRRRVRVRRRRRRREE
+EEEEEEEVAKLFADSPSGELVCITSFIASPYTRRRRRRRV
+
+Found: 7 segments
+
+Candidate membrane-spanning segments:
+
+ Helix Begin - End   Score Certainity
+     1     8 - 28    0.767 Putative
+     2    40 - 60    0.960 Putative
+     3    89 - 109   0.952 Putative
+     4   115 - 135   0.835 Putative
+     5   163 - 183   0.899 Putative
+     6   201 - 221   0.774 Putative
+     7   252 - 272   0.680 Putative
+
+Total of 128 structures are to be tested
+
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   1                  0.42       -46.00     0.00     -4.00    -1.00
+TOPOLOGY                                  N-out        ?     N-out
+EXT_LOOP      1      7      7              8.00  ( -1.01)
+TRANSMEM      8     28     21 0.42 0.77
+CYT_LOOP     29     88     60             29.00  ( -0.95)
+TRANSMEM     89    109     21 0.88 0.95
+EXT_LOOP    110    114      5              7.00  ( -1.01)
+TRANSMEM    115    135     21 0.59 0.84
+CYT_LOOP    136    162     27             25.00  ( -0.55)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    200     17             16.00  ( -0.71)
+TRANSMEM    201    221     21 0.43 0.77
+CYT_LOOP    222    280     59             23.00  ( -0.86)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   2                  0.20       -46.00    -0.76     -4.00    -1.00
+TOPOLOGY                                  N-out     N-in     N-out
+EXT_LOOP      1      7      7              8.00  ( -1.01)
+TRANSMEM      8     28     21 0.42 0.77
+CYT_LOOP     29     88     60             29.00  ( -0.95)
+TRANSMEM     89    109     21 0.88 0.95
+EXT_LOOP    110    114      5              7.00  ( -1.01)
+TRANSMEM    115    135     21 0.59 0.84
+CYT_LOOP    136    162     27             25.00  ( -0.55)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    251     68           ( 32.00)   -0.76
+TRANSMEM    252    272     21 0.20 0.68
+CYT_LOOP    273    280      8              7.00  ( -0.73)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   3                  0.42       -44.00    -0.45     -4.00    -1.00
+TOPOLOGY                                  N-out     N-in     N-out
+EXT_LOOP      1      7      7              8.00  ( -1.01)
+TRANSMEM      8     28     21 0.42 0.77
+CYT_LOOP     29     88     60             29.00  ( -0.95)
+TRANSMEM     89    109     21 0.88 0.95
+EXT_LOOP    110    200     91           ( 48.00)   -0.45
+TRANSMEM    201    221     21 0.43 0.77
+CYT_LOOP    222    280     59             23.00  ( -0.86)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   4                  0.43        43.00     0.60      6.00    -0.90
+TOPOLOGY                                   N-in    N-out      N-in
+CYT_LOOP      1     39     39             20.00  ( -0.79)
+TRANSMEM     40     60     21 0.90 0.96
+EXT_LOOP     61    200    140           ( 65.00)   -0.60
+TRANSMEM    201    221     21 0.43 0.77
+CYT_LOOP    222    280     59             23.00  ( -0.86)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   5                  0.42        43.00     0.54     -4.00    -1.00
+TOPOLOGY                                   N-in    N-out     N-out
+CYT_LOOP      1      7      7              8.00  ( -1.01)
+TRANSMEM      8     28     21 0.42 0.77
+EXT_LOOP     29     39     11             12.00  ( -1.01)
+TRANSMEM     40     60     21 0.90 0.96
+CYT_LOOP     61    114     54             24.00  ( -0.83)
+TRANSMEM    115    135     21 0.59 0.84
+EXT_LOOP    136    200     65           ( 41.00)   -0.54
+TRANSMEM    201    221     21 0.43 0.77
+CYT_LOOP    222    280     59             23.00  ( -0.86)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   6                  0.43        42.00     0.00      6.00    -0.90
+TOPOLOGY                                   N-in        ?      N-in
+CYT_LOOP      1     39     39             20.00  ( -0.79)
+TRANSMEM     40     60     21 0.90 0.96
+EXT_LOOP     61     88     28             17.00  ( -0.99)
+TRANSMEM     89    109     21 0.88 0.95
+CYT_LOOP    110    162     53             32.00  ( -0.44)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    200     17             16.00  ( -0.71)
+TRANSMEM    201    221     21 0.43 0.77
+CYT_LOOP    222    280     59             23.00  ( -0.86)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   7                  0.20        42.00     0.76      6.00    -0.90
+TOPOLOGY                                   N-in    N-out      N-in
+CYT_LOOP      1     39     39             20.00  ( -0.79)
+TRANSMEM     40     60     21 0.90 0.96
+EXT_LOOP     61     88     28             17.00  ( -0.99)
+TRANSMEM     89    109     21 0.88 0.95
+CYT_LOOP    110    162     53             32.00  ( -0.44)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    251     68           ( 32.00)   -0.76
+TRANSMEM    252    272     21 0.20 0.68
+CYT_LOOP    273    280      8              7.00  ( -0.73)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   8                  0.42        40.00     0.83     -4.00    -1.00
+TOPOLOGY                                   N-in    N-out     N-out
+CYT_LOOP      1      7      7              8.00  ( -1.01)
+TRANSMEM      8     28     21 0.42 0.77
+EXT_LOOP     29    114     86           ( 36.00)   -0.83
+TRANSMEM    115    135     21 0.59 0.84
+CYT_LOOP    136    162     27             25.00  ( -0.55)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    200     17             16.00  ( -0.71)
+TRANSMEM    201    221     21 0.43 0.77
+CYT_LOOP    222    280     59             23.00  ( -0.86)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY   9                  0.20        40.00     1.58     -4.00    -1.00
+TOPOLOGY                                   N-in    N-out     N-out
+CYT_LOOP      1      7      7              8.00  ( -1.01)
+TRANSMEM      8     28     21 0.42 0.77
+EXT_LOOP     29    114     86           ( 36.00)   -0.83
+TRANSMEM    115    135     21 0.59 0.84
+CYT_LOOP    136    162     27             25.00  ( -0.55)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    251     68           ( 32.00)   -0.76
+TRANSMEM    252    272     21 0.20 0.68
+CYT_LOOP    273    280      8              7.00  ( -0.73)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY  10                  0.43       -39.00    -0.86      4.00    -0.90
+TOPOLOGY                                  N-out     N-in      N-in
+EXT_LOOP      1     88     88           ( 37.00)   -0.86
+TRANSMEM     89    109     21 0.88 0.95
+CYT_LOOP    110    162     53             32.00  ( -0.44)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    200     17             16.00  ( -0.71)
+TRANSMEM    201    221     21 0.43 0.77
+CYT_LOOP    222    280     59             23.00  ( -0.86)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY  11                  0.42       -39.00    -0.66     -4.00    -1.00
+TOPOLOGY                                  N-out     N-in     N-out
+EXT_LOOP      1      7      7              8.00  ( -1.01)
+TRANSMEM      8     28     21 0.42 0.77
+CYT_LOOP     29     88     60             29.00  ( -0.95)
+TRANSMEM     89    109     21 0.88 0.95
+EXT_LOOP    110    114      5              7.00  ( -1.01)
+TRANSMEM    115    135     21 0.59 0.84
+CYT_LOOP    136    162     27             25.00  ( -0.55)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    280     97           ( 39.00)   -0.66
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY  12                  0.20       -39.00    -1.62      4.00    -0.90
+TOPOLOGY                                  N-out     N-in      N-in
+EXT_LOOP      1     88     88           ( 37.00)   -0.86
+TRANSMEM     89    109     21 0.88 0.95
+CYT_LOOP    110    162     53             32.00  ( -0.44)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    251     68           ( 32.00)   -0.76
+TRANSMEM    252    272     21 0.20 0.68
+CYT_LOOP    273    280      8              7.00  ( -0.73)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY  13                  0.42        38.00     0.00     -4.00    -1.00
+TOPOLOGY                                   N-in        ?     N-out
+CYT_LOOP      1      7      7              8.00  ( -1.01)
+TRANSMEM      8     28     21 0.42 0.77
+EXT_LOOP     29     39     11             12.00  ( -1.01)
+TRANSMEM     40     60     21 0.90 0.96
+CYT_LOOP     61     88     28             17.00  ( -0.99)
+TRANSMEM     89    109     21 0.88 0.95
+EXT_LOOP    110    114      5              7.00  ( -1.01)
+TRANSMEM    115    135     21 0.59 0.84
+CYT_LOOP    136    162     27             25.00  ( -0.55)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    200     17             16.00  ( -0.71)
+TRANSMEM    201    221     21 0.43 0.77
+CYT_LOOP    222    280     59             23.00  ( -0.86)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY  14                  0.20        38.00     0.76     -4.00    -1.00
+TOPOLOGY                                   N-in    N-out     N-out
+CYT_LOOP      1      7      7              8.00  ( -1.01)
+TRANSMEM      8     28     21 0.42 0.77
+EXT_LOOP     29     39     11             12.00  ( -1.01)
+TRANSMEM     40     60     21 0.90 0.96
+CYT_LOOP     61     88     28             17.00  ( -0.99)
+TRANSMEM     89    109     21 0.88 0.95
+EXT_LOOP    110    114      5              7.00  ( -1.01)
+TRANSMEM    115    135     21 0.59 0.84
+CYT_LOOP    136    162     27             25.00  ( -0.55)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    251     68           ( 32.00)   -0.76
+TRANSMEM    252    272     21 0.20 0.68
+CYT_LOOP    273    280      8              7.00  ( -0.73)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY  15                  0.42        36.00     0.45     -4.00    -1.00
+TOPOLOGY                                   N-in    N-out     N-out
+CYT_LOOP      1      7      7              8.00  ( -1.01)
+TRANSMEM      8     28     21 0.42 0.77
+EXT_LOOP     29     39     11             12.00  ( -1.01)
+TRANSMEM     40     60     21 0.90 0.96
+CYT_LOOP     61     88     28             17.00  ( -0.99)
+TRANSMEM     89    109     21 0.88 0.95
+EXT_LOOP    110    200     91           ( 48.00)   -0.45
+TRANSMEM    201    221     21 0.43 0.77
+CYT_LOOP    222    280     59             23.00  ( -0.86)
+//
+HEADER    START   STOP    LEN PROB   HP  DARGLYS  DCYTEXT DNCHARGE DNNEGPOS
+TOPOLOGY  16                  0.20        24.00     0.00     -4.00    -1.00
+TOPOLOGY                                   N-in        ?     N-out
+CYT_LOOP      1      7      7              8.00  ( -1.01)
+TRANSMEM      8     28     21 0.42 0.77
+EXT_LOOP     29     39     11             12.00  ( -1.01)
+TRANSMEM     40     60     21 0.90 0.96
+CYT_LOOP     61     88     28             17.00  ( -0.99)
+TRANSMEM     89    109     21 0.88 0.95
+EXT_LOOP    110    114      5              7.00  ( -1.01)
+TRANSMEM    115    135     21 0.59 0.84
+CYT_LOOP    136    162     27             25.00  ( -0.55)
+TRANSMEM    163    183     21 0.75 0.90
+EXT_LOOP    184    200     17             16.00  ( -0.71)
+TRANSMEM    201    221     21 0.43 0.77
+CYT_LOOP    222    251     30             16.00  ( -1.04)
+TRANSMEM    252    272     21 0.20 0.68
+EXT_LOOP    273    280      8              7.00  ( -0.73)
+//
