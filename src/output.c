@@ -42,7 +42,7 @@ void print_tmsummary (FILE *OUT, int nseg, seg_t *KSseg) {
   int i;
 
   (void)fprintf(OUT, "Candidate membrane-spanning segments:\n\n");
-  (void)fprintf(OUT, " Helix Begin - End   Score Certainity\n");
+  (void)fprintf(OUT, " Helix Begin - End   Score Certainty\n");
   for(i=0; i< nseg; i++) {
     type = NULL;
     (void)fprintf(OUT, "%6d %5i - %-5i %-6.3f",
@@ -103,7 +103,7 @@ void old_print_tmsummary (FILE *OUT, int nseg, seg_t *KSseg, char *seq) {
   int i;
 
   (void)fprintf(OUT, "Candidate membrane-spanning segments:\n\n");
-  (void)fprintf(OUT, " Helix Begin   End   Score Certainity\n");
+  (void)fprintf(OUT, " Helix Begin   End   Score Certainty\n");
   for(i=0; i< nseg; i++) {
     type = NULL;
     (void)fprintf(OUT, "%6d %5i   %-5i %-6.3f",
